@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separación de contenido y presentación en una página web con HTML semántico y CSS básico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="articulo" class="articulo">
+        <header>
+            <h1>Separación de contenido y presentación en una página web con HTML semántico y CSS básico</h1>
+            <p class="autor">Ricardo Daniel García Pocasangre</p>
+            <p class="afiliacion">Técnico en Desarrollo de software, Universidad Centroamericana José Simeón Cañas</p>
+            <p class="contacto">00032226@uca.edu.sv</p>
+        </header>
+        <section>
+            <h2>Resumen</h2>
+            <p class="resumen">La separación entre contenido y presentación es un principio básico del desarrollo web que facilita el mantenimiento y la legibilidad de los documentos. Este artículo describe la construcción de un artículo con formato IEEE a una columna mediante HTML semántico y una hoja de estilos externa con CSS básico. Se detalla el procedimiento seguido y se cuantifican los selectores empleados. Los resultados muestran que la presentación completa se obtiene con veinticuatro reglas, sin atributos de estilo en línea ni técnicas avanzadas de maquetación. Se concluye que el CSS básico basta para un documento legible y se recomienda incorporar pruebas de accesibilidad.</p>
+        </section>
+        <section>
+            <h2>Palabras clave</h2>
+            <p class="palabras-clave">css; html semántico; legibilidad; selectores; separación de contenido</p>
+        </section>
+        <section>
+            <h2>I. Introducción</h2>
+            <p>Las páginas web combinan información y reglas visuales. Cuando ambas se mezclan en un mismo archivo, el documento se vuelve difícil de mantener y de reutilizar [1]. Por ello se recomienda describir el significado del contenido con HTML y delegar el aspecto a una hoja de estilos externa. El objetivo de este trabajo es construir un artículo académico en formato IEEE a una columna que aplique esta separación, utilizando únicamente HTML semántico y CSS básico.</p>
+        </section>
+        <section>
+            <h2>II. Marco teórico</h2>
+            <p>El HTML semántico emplea etiquetas como <em>header</em>, <em>section</em> y <em>footer</em> para indicar la función de cada bloque y no su apariencia [2]. CSS, por su parte, asigna tipografía, color y espaciado mediante selectores [3].</p>
+            <h3>Selectores empleados</h3>
+            <p>En este trabajo se emplearon tres tipos:</p>
+            <ul class="lista">
+                <li>Selectores de etiqueta, que afectan a todos los elementos de un mismo tipo.</li>
+                <li>Selectores de clase, que afectan a los elementos que declaran esa clase.</li>
+                <li>Selectores de id, que afectan a un único elemento del documento.</li>
+            </ul>
+            <p>El modelo de caja rodea el contenido de relleno, borde y margen, y la propiedad <strong>box-sizing</strong> hace que el ancho incluya relleno y borde [3]. Una lectura cómoda requiere además jerarquía tipográfica clara y líneas de longitud moderada [4].</p>
+        </section>
+        <section>
+            <h2>III. Metodología o desarrollo</h2>
+            <p>El trabajo se desarrolló con un editor de texto y un navegador web, siguiendo la estructura de documento recomendada para páginas introductorias [5]. Los pasos principales fueron los siguientes:</p>
+            <ol class="pasos">
+                <li>Redacción del contenido del artículo con sus secciones I a V.</li>
+                <li>Marcado del contenido con etiquetas semánticas en index.html.</li>
+                <li>Escritura de style.css con reglas de tipografía, color, alineación y espaciado.</li>
+                <li>Revisión del resultado en el navegador y corrección de diferencias frente a la especificación.</li>
+                <li>Conteo de las reglas y de los selectores de la hoja de estilos.</li>
+            </ol>
+            <p>La Figura 1 ilustra la relación entre los dos archivos entregados.</p>
+            <figure>
+                <img src="img/figura1.png" alt="Diagrama en el que index.html aporta el contenido y style.css la presentación; el navegador combina ambos archivos y muestra el artículo final.">
+                <figcaption>Figura 1. Separación entre contenido (index.html) y presentación (style.css). Elaboración propia.</figcaption>
+            </figure>
+        </section>
+        <section>
+            <h2>IV. Resultados y discusión</h2>
+            <p>La Tabla I resume los selectores presentes en style.css, que contiene 24 reglas y 90 declaraciones distribuidas en 172 líneas.</p>
+            <table>
+                <caption class="titulo-tabla">Tabla I. Selectores utilizados en style.css</caption>
+                <thead>
+                    <tr>
+                        <th>Tipo de selector</th>
+                        <th>Cantidad</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Etiqueta</td>
+                        <td>12</td>
+                        <td>h2</td>
+                    </tr>
+                    <tr>
+                        <td>Clase</td>
+                        <td>10</td>
+                        <td>.resumen</td>
+                    </tr>
+                    <tr>
+                        <td>Id</td>
+                        <td>1</td>
+                        <td>#articulo</td>
+                    </tr>
+                    <tr>
+                        <td>Pseudo-clase</td>
+                        <td>1</td>
+                        <td>a:hover</td>
+                    </tr>
+                    <tr>
+                        <td>Universal</td>
+                        <td>1</td>
+                        <td>*</td>
+                    </tr>
+                    <tr>
+                        <td>Descendiente</td>
+                        <td>1</td>
+                        <td>.referencias li</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Predominan los selectores de etiqueta, lo que permite que gran parte del diseño dependa de la estructura semántica y no de nombres de clase. La hoja no incluye propiedades de maquetación avanzada. El alcance es limitado: los datos describen un único documento y no miden la legibilidad con lectores reales.</p>
+        </section>
+        <section>
+            <h2>V. Conclusiones</h2>
+            <p>Se logró un artículo de una columna cuyo contenido está marcado con HTML semántico y cuya presentación reside por completo en una hoja externa, de modo que el objetivo planteado se cumplió. El CSS básico resultó suficiente para obtener un documento legible. Como trabajo futuro se propone evaluar la accesibilidad del resultado con herramientas de validación y con lectores de pantalla.</p>
+        </section>
+        <section>
+            <h2>Referencias</h2>
+            <ol class="referencias">
+                <li>[1] H. W. Lie and B. Bos, <em>Cascading Style Sheets: Designing for the Web</em>, 3rd ed. Boston, MA, USA: Addison-Wesley, 2005. [Online]. Available: <a href="https://www.w3.org/Style/LieBos3e/">https://www.w3.org/Style/LieBos3e/</a></li>
+                <li>[2] WHATWG, "HTML Living Standard," 2026. [Online]. Available: <a href="https://html.spec.whatwg.org/">https://html.spec.whatwg.org/</a></li>
+                <li>[3] E. A. Meyer and E. Weyl, <em>CSS: The Definitive Guide</em>, 4th ed. Sebastopol, CA, USA: O'Reilly Media, 2017. [Online]. Available: <a href="https://books.google.com/books?vid=ISBN9781449393199">https://books.google.com/books?vid=ISBN9781449393199</a></li>
+                <li>[4] J. Nielsen, <em>Designing Web Usability</em>. Indianapolis, IN, USA: New Riders, 2000. [Online]. Available: <a href="https://www.nngroup.com/books/designing-web-usability/">https://www.nngroup.com/books/designing-web-usability/</a></li>
+                <li>[5] J. Duckett, <em>HTML and CSS: Design and Build Websites</em>. Indianapolis, IN, USA: Wiley, 2011. [Online]. Available: <a href="https://htmlandcssbook.com/">https://htmlandcssbook.com/</a></li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>Asignatura: Programación orientada al usuario. Fecha: 24 de octubre de 2026.</p>
+        <p>Declaración de autoría: el texto de este artículo es propio. Se utilizó inteligencia artificial como apoyo en la redacción del borrador.</p>
+    </footer>
+</body>
+</html>
